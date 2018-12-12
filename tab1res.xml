@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/keywordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/keyword"
+        android:layout_below="@+id/fromErr"
+        android:text="Keyword" />
+
+    <TextView
+        android:id="@+id/keywordErr"
+        android:layout_width="193dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/keywordText"
+        android:layout_below="@+id/keywordText"
+        android:textColor="@color/error"
+        android:textSize="10dp" />
+
+    <EditText
+        android:id="@+id/keyword"
+        android:layout_width="353dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/keywordErr"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Enter keyword"
+        android:inputType="text"
+        android:textSize="14dp" />
+
+    <!--
+    <TextView
+        android:id="@+id/categoryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/keywordText"
+        android:layout_below="@+id/keyword"
+        android:text="Category" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="351dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/keywordText"
+        android:layout_below="@+id/categoryText" />
+        -->
+
+    <TextView
+        android:id="@+id/distanceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/keywordText"
+        android:layout_below="@+id/keyword"
+        android:hint="Enter distance (default 10 miles)"
+        android:text="Distance" />
+
+    <EditText
+        android:id="@+id/distance"
+        android:layout_width="358dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/distanceText"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Enter distance (default 10 miles)"
+        android:inputType="number"
+        android:textSize="14sp" />
+
+    <!--<TextView
+        android:id="@+id/fromText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/keyword"
+        android:layout_alignStart="@+id/keywordText"
+        android:text="From" />-->
+
+    <AutoCompleteTextView
+        android:id="@+id/autocomplete_places"
+        android:layout_width="343dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="206dp"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Type in the location"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/search"
+        android:layout_width="189dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/autocomplete_places"
+        android:text="Search" />
+
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="191dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/search"
+        android:layout_marginStart="4dp"
+        android:layout_toEndOf="@+id/search"
+        android:text="Clear" />
+
+    <RadioGroup
+        android:id="@+id/fromGroup"
+        android:layout_width="208dp"
+        android:layout_height="54dp"
+        android:layout_alignStart="@+id/keywordText"
+        android:layout_below="@+id/distance"
+        android:checkedButton="@id/from1">
+
+        <RadioButton
+            android:id="@+id/from1"
+            android:layout_width="191dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:text="Current location" />
+
+        <RadioButton
+            android:id="@+id/from2"
+            android:layout_width="193dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Other. Specify Location" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/fromErr"
+        android:layout_width="227dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/autocomplete_places"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="-206dp"
+        android:layout_marginStart="28dp" />
+
+</RelativeLayout>
